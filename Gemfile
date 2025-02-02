@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'annotate'
 gem 'concurrent-ruby', '1.3.4'
 gem 'hamlit'
+gem 'devise'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -59,3 +60,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+
