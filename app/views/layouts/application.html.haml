@@ -11,8 +11,8 @@
   %body
     %header.header
       %p.header-title Boards
-      .header-dropdown
-        = image_tag 'default-avatar.png', class: 'header-avatar dropdown'
+      .dropdown
+        = image_tag 'default-avatar.png', class: 'header-avatar dropbtn'
         .dropdown-content
           = link_to 'プロフィール', '#'
     = yield
