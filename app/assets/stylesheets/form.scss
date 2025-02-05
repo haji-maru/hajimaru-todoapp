@@ -1,0 +1,33 @@
+input,
+select {
+  &.text {
+    width: 100%;
+    max-width: 360px;
+    margin: 8px 0;
+    padding: 16px 24px;
+    border: none;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+    border-radius: 8px;
+  }
+}
+
+.field {
+  width: 100%;
+  max-width: 360px;
+}
+
+label {
+  font-size: 12px;
+}
+
+textarea {
+  width: 100%;
+  margin: 8px 0px;
+  padding: 8px 8px;
+  min-height: 440px;
+  background-color: #f4f4f4;
+  resize: vertical;
+  border: none;
+  border-radius: 8px;
+}
