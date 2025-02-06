@@ -1,0 +1,17 @@
+@import "variables";
+
+.btn-primary {
+  background-color: $primary-color;
+  border: none;
+  width: calc(100% - 32px);
+  text-align: center;
+  color: white;
+  padding: 12px 0;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 18px;
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+}
