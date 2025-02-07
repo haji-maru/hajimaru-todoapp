@@ -1,6 +1,7 @@
 @import "variables";
 
 $avatar-size: 40px;
+$back-icon-size: 16px;
 
 .header {
   display: flex;
@@ -25,6 +26,18 @@ $avatar-size: 40px;
   color: $text-base-color;
   line-height: $avatar-size;
   font-size: 18px;
+}
+
+.header-logos {
+  min-width: 0;
+  display: flex;
+
+  img {
+    cursor: pointer;
+    width: $back-icon-size;
+    height: $back-icon-size;
+    margin: ($avatar-size - $back-icon-size) / 2 8px 0 0;
+  }
 }
 
 .header-avatar {
