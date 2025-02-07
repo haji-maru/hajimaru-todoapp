@@ -1,5 +1,8 @@
 @import "header";
 @import "variables";
+@import "tabs";
+@import "form";
+@import "buttons";
 
 html {
   word-spacing: 1px;
@@ -11,8 +14,9 @@ html {
   height: 100%;
 }
 
-:before,
-:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   margin: 0;
 }
@@ -22,4 +26,15 @@ body {
   background-color: $base-bg-color;
   font-size: 1em;
   color: $text-base-color;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $text-base-color;
+}
+
+.container {
+  width: 100%;
+  padding: 16px;
 }
