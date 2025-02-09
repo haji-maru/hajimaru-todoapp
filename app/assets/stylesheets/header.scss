@@ -47,36 +47,3 @@ $back-icon-size: 16px;
   border-radius: 100%;
   margin-top: 10px;
 }
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-  border: none;
-}
-
-.dropdown-content {
-  font-weight: normal;
-  display: none;
-  right: 0;
-  position: absolute;
-  background-color: white;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-
-  a {
-    padding: 8px 16px;
-    display: block;
-  }
-}
-
-.dropdown-content a:hover {
-  background-color: lightgrey;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}

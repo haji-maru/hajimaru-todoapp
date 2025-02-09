@@ -1,0 +1,17 @@
+.container
+  %h2.board-title All Boards
+  - @boards.each do |board|
+    .board-contents
+      .board-box
+        .board-box__title
+          = board.title
+        .board-box__content
+          = board.content
+        .board-box__detail
+          = image_tag 'default-avatar.png'
+      .board-actions
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            = link_to 'Edit'
+            = link_to 'Delete'
