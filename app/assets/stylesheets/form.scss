@@ -1,4 +1,5 @@
 .form-title {
+  margin-top: 20px;
   margin-bottom: 30px;
 }
 
@@ -22,14 +23,14 @@ select {
 }
 
 label {
-  font-size: 12px;
+  font-size: 18px;
 }
 
 textarea {
   width: 100%;
   margin: 8px 0px;
   padding: 8px 8px;
-  min-height: 440px;
+  min-height: 200px;
   background-color: #f4f4f4;
   resize: vertical;
   border: none;

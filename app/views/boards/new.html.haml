@@ -1,0 +1,13 @@
+.container
+  %h2.form-title New Board
+  = form_with(model: @board, url: boards_path, method: 'post', local: true) do |f|
+    .field
+      = f.label :title, 'Name'
+      %div
+        = f.text_field :title, class: 'text'
+    .field
+      = f.label :content, 'Description'
+      %div
+        = f.text_area :content
+    %div
+      = f.submit 'Submit', class: 'btn-primary'
