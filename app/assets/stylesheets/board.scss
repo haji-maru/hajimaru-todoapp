@@ -1,0 +1,43 @@
+@import "variables";
+
+$avatar-icon-size: 30px;
+
+.board-title {
+  margin-bottom: 30px;
+}
+
+.board-contents {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  background-color: #f4f4f4;
+  padding: 32px 16px 20px;
+  border-radius: 10px;
+
+  & + & {
+    margin-top: 26px;
+  }
+}
+
+.board-box {
+  &__title {
+    margin-bottom: 6px;
+    font-size: 18px;
+  }
+
+  &__content {
+    opacity: 0.6;
+  }
+
+  &__detail {
+    margin-top: 28px;
+
+    img {
+      width: $avatar-icon-size;
+      height: $avatar-icon-size;
+    }
+  }
+}
+
+board-action {
+}
