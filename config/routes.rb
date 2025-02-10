@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   root to: 'sessions#index'
 
-  resources :boards, only: [:index, :new, :create]
+  resources :boards, only: [:index, :new, :create, :edit, :update]
 end
