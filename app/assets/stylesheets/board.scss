@@ -1,7 +1,5 @@
 @import "variables";
 
-$avatar-icon-size: 30px;
-
 .board-title {
   margin-bottom: 30px;
 }
@@ -40,4 +38,21 @@ $avatar-icon-size: 30px;
 }
 
 board-action {
+}
+
+.board-new {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 26px;
+  padding: 68px 109px;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+  &__icon {
+  }
+
+  &__text {
+  }
 }
