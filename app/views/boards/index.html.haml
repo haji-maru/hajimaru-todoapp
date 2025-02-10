@@ -13,7 +13,7 @@
         .dropdown
           = image_tag 'actions.svg', class: 'dropbtn'
           .dropdown-content.mini
-            = link_to 'Edit'
+            = link_to 'Edit', edit_board_path(board)
             = link_to 'Delete'
   = link_to new_board_path do
     .board-new
