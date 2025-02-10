@@ -22,6 +22,13 @@ class BoardsController < ApplicationController
   end
 
   def update
+    @board = current_user.boards.find(params[:id])
+    if @board.update(board_params)
+      redirect_to boards_path, notice: '更新できました'
+    else
+      flash.now[:error] = '更新に失敗しました'
+      render :edit
+    end
   end
 
   private
