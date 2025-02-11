@@ -15,6 +15,8 @@
 #
 class Board < ApplicationRecord
   validates :title, presence: true
+  validates :title, format: { with: /A(^!@#).*/ }
+
   validates :content, presence: true
   validates :content, uniqueness: true
 
