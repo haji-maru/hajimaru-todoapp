@@ -16,6 +16,7 @@
 class Board < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
+  validates :content, uniqueness: true
 
   belongs_to :user
 end
