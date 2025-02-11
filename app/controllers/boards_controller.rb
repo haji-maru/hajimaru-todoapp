@@ -1,4 +1,6 @@
 class BoardsController < ApplicationController
+  before_action :set_board, only: [:edit, :update]
+
   def index
     @boards = Board.all
   end
@@ -18,11 +20,9 @@ class BoardsController < ApplicationController
   end
 
   def edit
-    @board = current_user.boards.find(params[:id])
   end
 
   def update
-    @board = current_user.boards.find(params[:id])
     if @board.update(board_params)
       redirect_to boards_path, notice: '更新できました'
     else
@@ -40,5 +40,9 @@ class BoardsController < ApplicationController
   private
   def board_params
     params.require(:board).permit(:title, :content)
+  end
+
+  def set_board
+    @board = current_user.boards.find(params[:id])
   end
 end
