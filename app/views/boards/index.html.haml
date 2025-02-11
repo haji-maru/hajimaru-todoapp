@@ -9,7 +9,7 @@
           = board.content
         .board-box__detail
           = image_tag 'default-avatar.png'
-      - if user_signed_in?
+      - if user_signed_in? && current_user.has_written?(board)
         .board-actions
           .dropdown
             = image_tag 'actions.svg', class: 'dropbtn'
