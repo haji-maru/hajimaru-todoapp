@@ -9,6 +9,7 @@
           = board.content
         .board-box__detail
           = image_tag 'default-avatar.png'
+          %p= board.user.display_name
       - if user_signed_in? && current_user.has_written?(board)
         .board-actions
           .dropdown
