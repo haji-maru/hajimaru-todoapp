@@ -6,11 +6,15 @@ before_action :authenticate_user!
   end
 
   def edit
-    if current_user.profile.present?
-      @profile = current_user.profile
-    else
-      @profile = current_user.build_profile
-    end
+    # if current_user.profile.present?
+    #   @profile = current_user.profile
+    # else
+    #   @profile = current_user.build_profile
+    # end
+
+    # @profile = current_user.profile || current_user.build_profile
+
+    @profile = current_user.prepare_profile
   end
 
   def update
