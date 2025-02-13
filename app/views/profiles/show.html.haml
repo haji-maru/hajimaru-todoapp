@@ -5,7 +5,7 @@
     .profile-page__user-basic-info
       .profile-page__user-name
         .profile-page__user-display-name
-          #{current_user.display_name} (#{current_user.age} ・ #{current_user.gender})
+          #{current_user.display_name} (#{current_user.age} ・ #{I18n.t("enum.genders.#{current_user.gender}")})
         .profile-page__user-action-button
           = link_to 'Edit', edit_profile_path
       .profile-page__user-introduction
