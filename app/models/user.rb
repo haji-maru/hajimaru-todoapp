@@ -30,7 +30,21 @@ class User < ApplicationRecord
   end
 
   def display_name
-    self.email.split('@').first
+    # if profile && profile.nickname
+    #   profile.nickname
+    # else
+    #   self.email.split('@').first
+    # end
+
+    profile&.nickname || self.email.split('@').first
+  end
+
+  def birthday
+    profile&.birthday
+  end
+
+  def gender
+    profile&.gender
   end
 
   def prepare_profile
