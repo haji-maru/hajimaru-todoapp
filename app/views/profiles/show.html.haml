@@ -9,4 +9,4 @@
         .profile-page__user-action-button
           = link_to 'Edit', edit_profile_path
       .profile-page__user-introduction
-        テスト入力です！
+        = current_user.profile&.introduction
