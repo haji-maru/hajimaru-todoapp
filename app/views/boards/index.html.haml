@@ -2,14 +2,15 @@
   %h2.board-title All Boards
   - @boards.each do |board|
     .board-contents
-      .board-box
-        .board-box__title
-          = board.title
-        .board-box__content
-          = board.content
-        .board-box__detail
-          = image_tag board.user.avatar_image
-          %p= board.user.display_name
+      = link_to tasks_path, class: 'task-link' do
+        .board-box
+          .board-box__title
+            = board.title
+          .board-box__content
+            = board.content
+          .board-box__detail
+            = image_tag board.user.avatar_image
+            %p= board.user.display_name
       - if user_signed_in? && current_user.has_written?(board)
         .board-actions
           .dropdown
