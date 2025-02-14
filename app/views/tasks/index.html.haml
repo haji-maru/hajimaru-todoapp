@@ -1,0 +1,18 @@
+.container
+  %h2.board-title Brackets
+  - @tasks.each do |task|
+    .board-contents
+      = link_to tasks_path, class: 'task-link' do
+        .board-box
+          .board-box__title
+            = board.title
+          .board-box__content
+            = board.content
+          .board-box__detail
+            = image_tag board.user.avatar_image
+            %p= board.user.display_name
+  = link_to new_board_path do
+    .board-new
+      .board-new__icon
+        %i.fa.fa-plus
+      .board-new__text Add new card
