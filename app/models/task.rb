@@ -15,4 +15,11 @@
 #  index_tasks_on_user_id  (user_id)
 #
 class Task < ApplicationRecord
+  validates :title, presence: true
+  validates :title, format: { without: /\A[!@#]/ }
+
+  validates :content, presence: true
+  validates :content, uniqueness: true
+
+  belongs_to :user
 end
