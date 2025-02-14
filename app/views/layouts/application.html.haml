@@ -15,7 +15,7 @@
         - unless [root_path, boards_path].include?(request.path)
           = link_to :back do
             = image_tag 'back.svg', class: 'header-back'
-        %p.header-title Boards
+        = link_to 'Boards', boards_path, class: 'header-title'
       - if user_signed_in?
         .dropdown
           = image_tag current_user.avatar_image, class: 'header-avatar dropbtn'
