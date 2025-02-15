@@ -28,4 +28,5 @@ class Task < ApplicationRecord
   validates :due_date, presence: true
 
   belongs_to :user
+  belongs_to :board
 end
