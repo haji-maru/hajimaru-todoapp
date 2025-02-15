@@ -21,5 +21,7 @@ class Task < ApplicationRecord
   validates :content, presence: true
   validates :content, uniqueness: true
 
+  validates :due_date, presence: true
+
   belongs_to :user
 end
