@@ -38,6 +38,25 @@
       border-radius: 50%;
     }
   }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__comment {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    opacity: 0.6;
+
+    img {
+      width: $avatar-icon-size;
+      height: $avatar-icon-size;
+      opacity: 1;
+    }
+  }
 }
 
 board-action {
