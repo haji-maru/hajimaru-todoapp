@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'sessions#index'
 
   resources :boards
+  resources :tasks
 
   resource :profile, only: [:show, :edit, :update]
 end
