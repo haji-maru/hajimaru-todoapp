@@ -15,11 +15,15 @@
 #  index_tasks_on_user_id  (user_id)
 #
 class Task < ApplicationRecord
+  has_one_attached :eyecatch
+
   validates :title, presence: true
   validates :title, format: { without: /\A[!@#]/ }
 
   validates :content, presence: true
   validates :content, uniqueness: true
+
+  validates :due_date, presence: true
 
   belongs_to :user
 end

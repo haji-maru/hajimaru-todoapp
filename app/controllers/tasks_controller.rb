@@ -17,7 +17,7 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.build(task_params)
     if @task.save
-      redirect_to task_path, notice: '保存できました'
+      redirect_to tasks_path, notice: '保存できました'
     else
       flash.now[:error] = '保存に失敗しました'
       render :new
@@ -44,7 +44,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :content)
+    params.require(:task).permit(:title, :content, :due_date, :eyecatch)
   end
 
   def set_task

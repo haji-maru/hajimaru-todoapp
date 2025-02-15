@@ -4,13 +4,20 @@
     .board-contents
       = link_to task_path(task), class: 'task-link' do
         .board-box
+          - if task.eyecatch.attached?
+            .task-image
+              .task-eyecatch
+                = image_tag task.eyecatch
           .board-box__title
             = task.title
           .board-box__content
             = task.content
-          .board-box__detail
-            = image_tag task.user.avatar_image
-            %p= task.user.display_name
+          .board-box__footer
+            .board-box__detail
+              = image_tag task.user.avatar_image
+            .board-box__comment
+              %span 23
+              = image_tag 'message-square.svg'
   = link_to new_task_path do
     .board-new
       .board-new__icon
