@@ -2,16 +2,16 @@
   %h2.board-title Brackets
   - @tasks.each do |task|
     .board-contents
-      = link_to tasks_path, class: 'task-link' do
+      = link_to task_path(task), class: 'task-link' do
         .board-box
           .board-box__title
-            = board.title
+            = task.title
           .board-box__content
-            = board.content
+            = task.content
           .board-box__detail
-            = image_tag board.user.avatar_image
-            %p= board.user.display_name
-  = link_to new_board_path do
+            = image_tag task.user.avatar_image
+            %p= task.user.display_name
+  = link_to new_task_path do
     .board-new
       .board-new__icon
         %i.fa.fa-plus
