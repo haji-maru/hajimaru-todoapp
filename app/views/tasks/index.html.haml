@@ -4,6 +4,10 @@
     .board-contents
       = link_to task_path(task), class: 'task-link' do
         .board-box
+          - if task.eyecatch.attached?
+            .task-image
+              .task-eyecatch
+                = image_tag task.eyecatch
           .board-box__title
             = task.title
           .board-box__content

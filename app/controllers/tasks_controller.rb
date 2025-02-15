@@ -44,7 +44,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :content, :due_date)
+    params.require(:task).permit(:title, :content, :due_date, :eyecatch)
   end
 
   def set_task

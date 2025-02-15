@@ -7,8 +7,9 @@
         .dropdown-content.mini
           = link_to 'Edit', edit_task_path(@task)
           = link_to 'Delete', task_path(@task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-  .task-image
-    .task-eyecatch
-      = image_tag 'eyecatch.png'
+  - if @task.eyecatch.attached?
+    .task-image
+      .task-eyecatch
+        = image_tag @task.eyecatch
   .task-content
     = @task.content
