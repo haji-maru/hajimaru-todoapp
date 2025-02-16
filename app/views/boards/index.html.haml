@@ -2,7 +2,7 @@
   %h2.board-title All Boards
   - @boards.each do |board|
     .board-contents
-      = link_to tasks_path, class: 'task-link' do
+      = link_to board_tasks_path(board), class: 'task-link' do
         .board-box
           .board-box__title
             = board.title
