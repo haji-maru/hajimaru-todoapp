@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_board, only: [:index, :show, :new, :create]
+  before_action :set_board, only: [:index, :show, :new, :create, :update]
   before_action :set_task, only: [:edit, :update]
   before_action :authenticate_user!
 
@@ -31,7 +31,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to board_tasks_path, notice: '更新できました'
+      redirect_to board_tasks_path(@board), notice: '更新できました'
     else
       flash.now[:error] = '更新に失敗しました'
       render :edit
