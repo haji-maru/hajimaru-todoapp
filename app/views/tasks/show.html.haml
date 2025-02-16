@@ -15,9 +15,16 @@
   .task-content
     = @task.content
 
-  .container
-    = link_to new_board_task_comment_path(@task.board, @task) do
-      .board-new
-        .board-new__icon
-          %i.fa.fa-plus
-        .board-new__text Add new comment
+  %h2 Comment
+  - @comments.each do |comment|
+    .task-box
+      .task-box__detail
+        = image_tag @task.user.avatar_image
+      .task-comment
+        %p= comment.content
+
+  = link_to new_board_task_comment_path(@task.board, @task) do
+    .board-new
+      .board-new__icon
+        %i.fa.fa-plus
+      .board-new__text Add new comment

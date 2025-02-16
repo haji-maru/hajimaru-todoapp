@@ -3,7 +3,9 @@
 $container-padding: 16px;
 
 .task {
-  // margin: 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   padding: $container-padding $container-padding;
 }
 
@@ -24,7 +26,7 @@ $container-padding: 16px;
   border-radius: 10px;
 }
 .task-image {
-  margin: 16px 16px;
+  margin: 0 16px;
 }
 
 .task-eyecatch {
@@ -41,5 +43,26 @@ $container-padding: 16px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+  }
+}
+
+.task-box {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  & + & {
+    margin-top: 26px;
+  }
+
+  &__detail {
+    display: flex;
+    gap: 10px;
+
+    img {
+      width: $avatar-icon-size-l;
+      height: $avatar-icon-size-l;
+      border-radius: 50%;
+    }
   }
 }
