@@ -1,8 +1,8 @@
 .container
   %h2.board-title Brackets
-  - @tasks.each do |task|
+  - @board.tasks.each do |task|
     .board-contents
-      = link_to task_path(task), class: 'task-link' do
+      = link_to board_task_path(task.board, task), class: 'task-link' do
         .board-box
           - if task.eyecatch.attached?
             .task-image
@@ -18,7 +18,7 @@
             .board-box__comment
               %span 23
               = image_tag 'message-square.svg'
-  = link_to new_task_path do
+  = link_to new_board_task_path do
     .board-new
       .board-new__icon
         %i.fa.fa-plus
