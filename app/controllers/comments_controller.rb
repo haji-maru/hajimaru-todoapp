@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @task.comments.build(comment_params)
     if @comment.save
-      redirect_to board_task_path(task.board, task), notice: 'コメントを追加しました'
+      redirect_to board_task_path(@task.board, @task), notice: 'コメントを追加しました'
     else
       flash.now[:error] = '保存に失敗しました'
       render :new
