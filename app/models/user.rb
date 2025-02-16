@@ -29,12 +29,15 @@ class User < ApplicationRecord
 
   delegate :birthday, :age, :gender, to: :profile, allow_nil: true
 
-  def has_written?(board)
-    boards.exists?(id: board.id)
-  end
-
-  def has_written?(task)
-    tasks.exists?(id: task.id)
+  def has_written?(item)
+    case item
+    when Board
+      boards.exists?(id: item.id)
+    when Task
+      tasks.exists?(id: item.id)
+    else
+      false
+    end
   end
 
   def display_name
