@@ -1,12 +1,13 @@
 .task
   .task-head
     %h2.board-title= @task.title
-    .board-actions
-      .dropdown
-        = image_tag 'actions.svg', class: 'dropbtn'
-        .dropdown-content.mini
-          = link_to 'Edit', edit_board_task_path(@task)
-          = link_to 'Delete', board_task_path(@task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+    - if user_signed_in? && current_user.has_written?(@task)
+      .board-actions
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            = link_to 'Edit', edit_board_task_path(@task)
+            = link_to 'Delete', board_task_path(@task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
   - if @task.eyecatch.attached?
     .task-image
       .task-eyecatch
