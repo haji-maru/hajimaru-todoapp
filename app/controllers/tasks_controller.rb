@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_board, only: [:index, :show, :new, :create, :update]
+  before_action :set_board, only: [:index, :show, :new, :create, :update, :destroy]
   before_action :set_task, only: [:edit, :update]
   before_action :authenticate_user!
 
@@ -41,7 +41,7 @@ class TasksController < ApplicationController
   def destroy
     task = current_user.tasks.find(params[:id])
     task.destroy!
-    redirect_to board_tasks_path, notice: '削除できました'
+    redirect_to board_tasks_path(@board), notice: '削除できました'
   end
 
   private
