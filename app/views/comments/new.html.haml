@@ -2,7 +2,7 @@
   %ul
     - @comment.errors.full_messages.each do |message|
       %li= message
-  %h2.form-title New comment
+  %h2.form-title New Comment
   = form_with(model: @comment, url: board_task_comments_path(@comment.task), local: true) do |f|
     .field
       %div

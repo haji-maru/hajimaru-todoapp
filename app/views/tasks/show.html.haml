@@ -14,3 +14,10 @@
         = image_tag @task.eyecatch
   .task-content
     = @task.content
+
+  .container
+    = link_to new_board_task_comment_path(@task.board, @task) do
+      .board-new
+        .board-new__icon
+          %i.fa.fa-plus
+        .board-new__text Add new comment
