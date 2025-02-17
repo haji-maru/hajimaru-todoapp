@@ -16,7 +16,7 @@
             .board-box__detail
               = image_tag task.user.avatar_image
             .board-box__comment
-              %span 23
+              %span= task.comment_count
               = image_tag 'message-square.svg'
   = link_to new_board_task_path do
     .board-new
