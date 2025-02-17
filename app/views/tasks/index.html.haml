@@ -15,6 +15,8 @@
           .board-box__footer
             .board-box__detail
               = image_tag task.user.avatar_image
+              - task.comments.each do |comment|
+                = image_tag comment.user.avatar_image
             .board-box__comment
               %span= task.comment_count
               = image_tag 'message-square.svg'
