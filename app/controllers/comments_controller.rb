@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @task.comments.build(comment_params)
+    @comment.user = current_user
     if @comment.save
       redirect_to board_task_path(@task.board, @task), notice: 'コメントを追加しました'
     else

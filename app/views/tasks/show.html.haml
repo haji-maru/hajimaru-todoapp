@@ -19,7 +19,7 @@
   - @comments.each do |comment|
     .task-box
       .task-box__detail
-        = image_tag @task.user.avatar_image
+        = image_tag comment.user.avatar_image
       .task-comment
         %p= comment.content
 
