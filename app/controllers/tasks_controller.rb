@@ -42,7 +42,7 @@ class TasksController < ApplicationController
   def destroy
     task = current_user.tasks.find(params[:id])
     task.destroy!
-    redirect_to board_tasks_path(task.board), notice: '削除できました'
+    redirect_to board_tasks_path(task.board, task), notice: '削除できました'
   end
 
   private
