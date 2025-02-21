@@ -1,10 +1,13 @@
 @import "variables";
 
-$container-padding: 16px;
+$container-padding: 20px;
 
 .task {
-  // margin: 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   padding: $container-padding $container-padding;
+  margin-top: 20px;
 }
 
 .task-link {
@@ -15,16 +18,16 @@ $container-padding: 16px;
 .task-head {
   display: flex;
   justify-content: space-between;
-  // padding: 0 10px;
+  padding-right: 20px;
 }
 
 .task-content {
   background-color: #f4f4f4;
-  padding: 20px 16px 26px;
+  padding: 20px 20px 26px;
   border-radius: 10px;
 }
 .task-image {
-  margin: 16px 16px;
+  margin: 0 20px;
 }
 
 .task-eyecatch {
@@ -42,4 +45,33 @@ $container-padding: 16px;
     transform: translate(-50%, -50%);
     width: 100%;
   }
+}
+
+.task-box {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  & + & {
+    margin-top: 26px;
+  }
+
+  &__detail {
+    display: flex;
+    gap: 10px;
+
+    img {
+      width: $avatar-icon-size-l;
+      height: $avatar-icon-size-l;
+      border-radius: 50%;
+    }
+  }
+}
+
+.--task__comment {
+  gap: 0;
+}
+
+.task-comment-icon {
+  margin-left: -10px;
 }

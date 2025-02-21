@@ -6,11 +6,25 @@
         .dropdown
           = image_tag 'actions.svg', class: 'dropbtn'
           .dropdown-content.mini
-            = link_to 'Edit', edit_board_task_path(@task)
-            = link_to 'Delete', board_task_path(@task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+            = link_to 'Edit', edit_board_task_path(@task.board, @task)
+            = link_to 'Delete', board_task_path(@task.board, @task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
   - if @task.eyecatch.attached?
     .task-image
       .task-eyecatch
         = image_tag @task.eyecatch
   .task-content
     = @task.content
+
+  %h2 Comment
+  - @comments.each do |comment|
+    .task-box
+      .task-box__detail
+        = image_tag comment.user.avatar_image
+      .task-comment
+        %p= comment.content
+
+  = link_to new_board_task_comment_path(@task.board, @task) do
+    .board-new
+      .board-new__icon
+        %i.fa.fa-plus
+      .board-new__text Add new comment

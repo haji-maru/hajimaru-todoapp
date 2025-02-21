@@ -29,4 +29,24 @@ class Task < ApplicationRecord
 
   belongs_to :user
   belongs_to :board
+
+  has_many :comments, dependent: :destroy
+
+  def comment_count
+    comments.count
+  end
+
+  def unique_commenters
+    displayed_users = [] # user_idの格納用
+    unique_users = [] # uniqなuser_idの格納用
+
+    comments.each do |comment|
+      unless displayed_users.include?(comment.user.id) # 重複チェック
+        displayed_users << comment.user.id # user_idを格納
+        unique_users << comment.user  # userを格納
+      end
+    end
+
+    unique_users  # 最終的に格納したuserを返す
+  end
 end

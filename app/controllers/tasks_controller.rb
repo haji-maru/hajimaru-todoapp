@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_board, only: [:index, :show, :new, :create, :update, :destroy]
+  before_action :set_board, only: [:index, :show, :new, :create, :update]
   before_action :set_task, only: [:edit, :update]
   before_action :authenticate_user!
 
@@ -9,6 +9,7 @@ class TasksController < ApplicationController
 
   def show
     @task = @board.tasks.find(params[:id])
+    @comments = @task.comments
   end
 
   def new
@@ -19,7 +20,7 @@ class TasksController < ApplicationController
     @task = @board.tasks.build(task_params)
     @task.user = current_user
     if @task.save
-      redirect_to board_tasks_path, notice: '保存できました'
+      redirect_to board_tasks_path(@board), notice: '保存できました'
     else
       flash.now[:error] = '保存に失敗しました'
       render :new
@@ -41,7 +42,7 @@ class TasksController < ApplicationController
   def destroy
     task = current_user.tasks.find(params[:id])
     task.destroy!
-    redirect_to board_tasks_path(@board), notice: '削除できました'
+    redirect_to board_tasks_path(task.board), notice: '削除できました'
   end
 
   private
