@@ -15,11 +15,8 @@
           .board-box__footer
             .board-box__detail.--task__comment
               = image_tag task.user.avatar_image
-              - displayed_users = []
-              - task.comments.each do |comment|
-                - unless displayed_users.include?(comment.user.id)
-                  = image_tag comment.user.avatar_image, class: 'task-comment-icon'
-                  - displayed_users << comment.user.id
+              - task.unique_commenters.each do |user|
+                = image_tag user.avatar_image, class: 'task-comment-icon'
             .board-box__comment
               %span= task.comment_count
               = image_tag 'message-square.svg'
