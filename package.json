@@ -10,10 +10,10 @@
   },
   "version": "0.1.0",
   "engines": {
-    "node": "22.x",
+    "node": "22.11.0",
     "yarn": "1.22.22"
   },
   "scripts": {
-    "build": "NODE_OPTIONS='--openssl-legacy-provider' webpack"
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider"
   }
 }
