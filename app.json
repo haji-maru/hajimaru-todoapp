@@ -4,7 +4,11 @@
   "keywords": [],
   "website": "",
   "repository": "https://github.com/haji-maru/hajimaru-todoapp",
-  "env": {},
+  "env": {
+    "NODE_OPTIONS": {
+      "value": "--openssl-legacy-provider"
+    }
+  },
   "addons": ["heroku-postgresql:hobby-dev"],
   "buildpacks": [
     {
