@@ -14,7 +14,7 @@ module HajimaruTodoapp
     puts '***********************************************'
     puts "NODE_OPTIONS: #{ENV['NODE_OPTIONS']}"
     puts '***********************************************'
-    
+
     config.load_defaults 6.0
 
     if Rails.env.development? || Rails.env.test?
