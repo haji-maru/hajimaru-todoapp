@@ -9,6 +9,12 @@ Bundler.require(*Rails.groups)
 module HajimaruTodoapp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+
+    # 初期化中にコンソールに出力
+    puts '***********************************************'
+    puts "NODE_OPTIONS: #{ENV['NODE_OPTIONS']}"
+    puts '***********************************************'
+    
     config.load_defaults 6.0
 
     if Rails.env.development? || Rails.env.test?
