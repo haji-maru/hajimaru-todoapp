@@ -14,7 +14,7 @@
     "yarn": "1.22.22"
   },
   "scripts": {
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && webpack",
-    "heroku-postbuild": "export NODE_OPTIONS=--openssl-legacy-provider && webpack"
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider",
+    "heroku-postbuild": "export NODE_OPTIONS=--openssl-legacy-provider"
   }
 }
