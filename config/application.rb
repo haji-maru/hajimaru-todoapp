@@ -10,6 +10,10 @@ module HajimaruTodoapp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
 
+ # 強制的にNODE_OPTIONSを設定
+    # 多分オプションを複数指定できるはず。ダメだったら --openssl-legacy-provider だけで試してみる。
+    ENV['NODE_OPTIONS'] = '--max_old_space_size=2560 --openssl-legacy-provider'
+
     # 初期化中にコンソールに出力
     puts '***********************************************'
     puts "NODE_OPTIONS: #{ENV['NODE_OPTIONS']}"
