@@ -12,7 +12,7 @@ module HajimaruTodoapp
 
  # 強制的にNODE_OPTIONSを設定
     # 多分オプションを複数指定できるはず。ダメだったら --openssl-legacy-provider だけで試してみる。
-    ENV['NODE_OPTIONS'] = '--max_old_space_size=2560 --openssl-legacy-provider'
+    ENV['NODE_OPTIONS'] = '--openssl-legacy-provider'
 
     # 初期化中にコンソールに出力
     puts '********** config/application.rb **************' # どのファイルから出力されているかわかりやすいように追記
